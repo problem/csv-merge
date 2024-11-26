@@ -7,7 +7,7 @@ use std::io;
 use std::env;
 
 
-fn main() -> Result<(), Box<Error>> {
+fn main() -> Result<(), Box<dyn Error>> {
     let args:Vec<String> = env::args().collect();
     let csv_paths = &args[1..];
 
@@ -66,11 +66,11 @@ test_suite! {
 
         match create_test_csv("1") {
             Ok(val) => csv_path1 = val,
-            Err(e) => panic!(e),
+            Err(e) => std::panic::panic_any(e),
         }
         match create_test_csv("2") {
             Ok(val) => csv_path2 = val,
-            Err(e) => panic!(e),
+            Err(e) => std::panic::panic_any(e),
         }
 
         let expected_output = "\
