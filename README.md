@@ -2,13 +2,13 @@
 
 [![Package][package-img]][package-url]
 
-A cli tool for merging CSV files.
+A CLI tool for merging CSV files. Merges are sequential based on order of files passed in.
 
 [Documentation](https://crates.io/crates/csv-merge)
 
 ## Example usage
 
-Using cargo:
+Using Cargo:
 
 ```bash
 cargo run input.csv input2.csv > output_merged.csv
